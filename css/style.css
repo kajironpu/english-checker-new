@@ -1,0 +1,116 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 18px;
+}
+
+h2 { font-size: 28px; color: #2c3e50; margin-bottom: 12px; }
+h3 { font-size: 22px; color: #2c3e50; margin-bottom: 10px; }
+p { margin-bottom: 12px; font-size: 18px; }
+
+#problem {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 18px;
+  background-color: #e8f4f8;
+  border-left: 5px solid #4285f4;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  word-break: break-word;
+}
+
+textarea {
+  width: 100%;
+  height: auto;        /* 高さを自動に */
+  min-height: 6em;     /* 4行分くらい */
+  max-height: 200px;   /* 必要に応じてスクロール上限 */
+  margin-bottom: 0.5em;
+  overflow-y: auto;    /* 内容が多ければスクロール */
+  resize: vertical;
+  padding: 8px;
+  font-size: 16px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 6px rgba(66, 133, 244, 0.3);
+}
+
+#voiceInputBtn {
+  display: block;
+  margin: 0.5em auto 1em;
+  padding: 1em 1.5em;  /* 縦を大きく */
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+button {
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+}
+
+button#checkBtn { background-color: #4285f4; color: white; }
+button#checkBtn:hover:not(:disabled) { background-color: #3367d6; transform: translateY(-1px); }
+
+button#nextBtn { background-color: #0f9d58; color: white; }
+button#nextBtn:hover { background-color: #0b8a45; transform: translateY(-1px); }
+
+button:disabled { background-color: #ccc; cursor: not-allowed; transform: none; }
+
+.result {
+  margin-top: 24px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.result p { margin-bottom: 14px; font-size: 18px; line-height: 1.8; }
+.result strong { color: #2c3e50; font-weight: 700; }
+#corrected, #score, #advice { font-size: 19px; line-height: 1.7; }
+
+.loading { color: #666; font-style: italic; }
+.error { color: #d93025; font-weight: bold; }
+.score-high { color: #0f9d58; font-weight: bold; }
+.score-medium { color: #f4b400; font-weight: bold; }
+.score-low { color: #db4437; font-weight: bold; }
+
+@media (max-width: 480px) {
+  body { font-size: 17px; padding: 15px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  #problem { font-size: 19px; padding: 16px; }
+  textarea {
+    min-height: 6em;    /* スマホでも4行分 */
+    font-size: 16px;
+    padding: 8px;
+  }
+  button { font-size: 17px; padding: 12px 20px; min-width: 130px; }
+  .result { padding: 20px; }
+  .result p, #corrected, #score, #advice { font-size: 17px; }
+}
