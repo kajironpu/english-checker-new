@@ -137,6 +137,7 @@ export default function EnglishChecker() {
     setAdvice('');
   };
 
+  // スタイルオブジェクトをコンポーネント内で定義（isCheckingにアクセスするため）
   const styles = {
     container: {
       maxWidth: '800px',
