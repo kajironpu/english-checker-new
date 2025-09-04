@@ -292,8 +292,12 @@ export default function EnglishChecker() {
       </div>
       
       <div style={styles.buttonGroup}>
-        <button style={styles.checkBtn} onClick={handleCheck}>
-          添削する
+        <button 
+          style={styles.checkBtn} 
+          onClick={handleCheck}
+          disabled={isChecking}
+        >
+          {isChecking ? '添削中...' : '添削する'}
         </button>
         <button style={styles.nextBtn} onClick={handleNext}>
           次の問題
