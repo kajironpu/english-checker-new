@@ -1,6 +1,5 @@
-"use client";
-
-import { useState, useEffect } from 'react';
+import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 
 // 問題データベース
 const problemsDB = [
@@ -11,7 +10,7 @@ const problemsDB = [
   { id: 5, japanese: "彼女は環境問題について深く考えている。", level: "advanced", hints: ["environmental issues", "thinking deeply", "about"] }
 ];
 
-export default function EnglishChecker() {
+const EnglishChecker = () => {
   const [currentProblem, setCurrentProblem] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [corrected, setCorrected] = useState('');
@@ -190,4 +189,7 @@ export default function EnglishChecker() {
       )}
     </div>
   );
-}
+};
+
+// 🚀 dynamic でSSR無効化（ここが大事）
+export default dynamic(() => Promise.resolve(EnglishChecker), { ssr: false });
